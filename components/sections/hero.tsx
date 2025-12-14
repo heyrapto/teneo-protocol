@@ -69,7 +69,7 @@ export const HeroSection = () => {
             {/* Infinite Marquee */}
             <div className="w-full relative z-10 overflow-hidden">
                 <div className="flex gap-10 animate-marquee w-fit">
-                    {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, index) => (
+                    {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, index) => (
                         <div
                             key={index}
                             className="relative w-[600px] h-[600px] shrink-0 group overflow-hidden"
@@ -113,15 +113,15 @@ export const HeroSection = () => {
 
                             {/* Video overlay only for rewards */}
                             {item.type === "video" && (
-                                <div className="absolute right-0 bottom-52 w-[200px] h-[200px] transition-transform duration-500">
+                                <div className="absolute right-10 bottom-52 w-[200px] h-[200px] transition-transform rotate-90 duration-500">
                                     <video
                                         autoPlay
                                         loop
                                         muted
                                         playsInline
-                                        className="w-full h-full object-cover rounded-full"
+                                        className="w-full h-full object-cover mix-blend-screen"
                                     >
-                                        <source src="/videos/hero-rewards.mp4" type="video/mp4" />
+                                        <source src="/videos/rewards-video.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             )}
