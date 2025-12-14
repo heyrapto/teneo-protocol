@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Stripes } from "../layout/stripes";
 import { marqueeItems } from "@/constants";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaTelegramPlane, FaLinkedinIn, FaYoutube, FaInstagram, FaRedditAlien, FaWhatsapp, FaTiktok } from "react-icons/fa";
 import { BsX, BsMeta } from "react-icons/bs";
 

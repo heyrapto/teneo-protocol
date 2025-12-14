@@ -1,7 +1,6 @@
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { Stripes } from "../layout/stripes";
-import { BsArrowUpRight } from "react-icons/bs";
 
 export const CommunitySection = () => {
     return (
