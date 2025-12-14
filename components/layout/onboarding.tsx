@@ -24,12 +24,12 @@ export const Onboarding = () => {
                     animate={{ scaleY: 0 }}
                     transition={{
                         duration: 1.2,
-                        delay: i * 0.1, // Left to Right stagger (Bottom-Left to Top-Right reveal)
+                        delay: (6 - i) * 0.1, // Right to Left stagger (Cluster/Base on Left)
                         ease: [0.22, 1, 0.36, 1],
                     }}
                     className="w-full h-full bg-[#B4CCD1]"
                     style={{
-                        transformOrigin: "top", // Shrink towards top, revealing bottom first
+                        transformOrigin: "bottom", // Shrink towards bottom, bars sit on floor
                     }}
                 />
             ))}
