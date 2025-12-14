@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
-import { Button } from "../ui/button";
 import { Stripes } from "../layout/stripes";
 import { marqueeItems } from "@/constants";
 import { motion, useScroll, useTransform } from "framer-motion";
