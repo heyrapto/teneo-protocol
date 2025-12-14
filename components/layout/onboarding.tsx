@@ -29,7 +29,7 @@ export const Onboarding = () => {
                     }}
                     className="w-full h-full bg-[#B4CCD1]"
                     style={{
-                        transformOrigin: "botttom", // Shrink towards top (Lift up)
+                        transformOrigin: "bottom",
                     }}
                 />
             ))}

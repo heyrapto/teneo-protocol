@@ -1,9 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
+import { Button } from "../ui/button";
 import { Stripes } from "../layout/stripes";
 import { marqueeItems } from "@/constants";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { FaTelegramPlane, FaLinkedinIn, FaYoutube, FaInstagram, FaRedditAlien, FaWhatsapp, FaTiktok } from "react-icons/fa";
+import { BsX, BsMeta } from "react-icons/bs";
 
 export const HeroSection = () => {
     return (
@@ -64,19 +68,48 @@ export const HeroSection = () => {
 
             {/* Infinite Marquee */}
             <div className="w-full relative z-10 overflow-hidden">
-                <div className="flex gap-10 animate-marquee">
-                    {[...marqueeItems, ...marqueeItems].map((item, index) => (
+                <div className="flex gap-10 animate-marquee w-fit">
+                    {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, index) => (
                         <div
                             key={index}
-                            className="relative w-[600px] h-[600px] shrink-0 group"
+                            className="relative w-[600px] h-[600px] shrink-0 group overflow-hidden"
                         >
-                            {/* Image */}
                             <Image
                                 src={item.src}
                                 alt={item.alt}
                                 fill
                                 className="object-contain object-top"
                             />
+
+                            {/* Social Icons Overlay for Global Data Card */}
+                            {item.src === "/images/data.png" && (
+                                <div className="absolute top-12 left-0 w-full flex flex-col gap-6 overflow-hidden">
+                                    {/* Row 1 - Right (Reverse) */}
+                                    <div className="flex gap-8 animate-marquee-reverse w-max">
+                                        {[...Array(6)].flatMap(() => [
+                                            <FaTelegramPlane key="tg" className="text-4xl text-black" />,
+                                            <div key="dots" className="flex gap-1 items-center"><div className="w-2 h-2 bg-black rounded-full"></div><div className="w-2 h-2 bg-black rounded-full"></div></div>,
+                                            <BsMeta key="meta" className="text-4xl text-black" />,
+                                            <FaInstagram key="ig" className="text-4xl text-black" />,
+                                            <BsX key="x" className="text-4xl text-black" />,
+                                        ]).map((icon, i) => (
+                                            <div key={i} className="shrink-0">{icon}</div>
+                                        ))}
+                                    </div>
+                                    {/* Row 2 - Left */}
+                                    <div className="flex gap-8 animate-marquee w-max">
+                                        {[...Array(6)].flatMap(() => [
+                                            <FaLinkedinIn key="li" className="text-4xl text-black" />,
+                                            <FaRedditAlien key="rd" className="text-4xl text-black" />,
+                                            <FaYoutube key="yt" className="text-4xl text-black" />,
+                                            <FaWhatsapp key="wa" className="text-4xl text-black" />,
+                                            <FaTiktok key="tt" className="text-4xl text-black" />,
+                                        ]).map((icon, i) => (
+                                            <div key={i} className="shrink-0">{icon}</div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
 
                             {/* Video overlay only for rewards */}
                             {item.type === "video" && (
@@ -86,9 +119,9 @@ export const HeroSection = () => {
                                         loop
                                         muted
                                         playsInline
-                                        className="w-full h-full object-cover mix-blend-screen"
+                                        className="w-full h-full object-cover rounded-full"
                                     >
-                                        <source src="/videos/rewards-video.mp4" type="video/mp4" />
+                                        <source src="/videos/hero-rewards.mp4" type="video/mp4" />
                                     </video>
                                 </div>
                             )}

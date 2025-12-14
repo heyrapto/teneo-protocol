@@ -75,9 +75,24 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 5s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
-.animate-marquee:hover {
+.animate-marquee-reverse {
+  animation: marquee-reverse 20s linear infinite;
+}
+
+/* .animate-marquee:hover,
+.animate-marquee-reverse:hover {
   animation-play-state: paused;
+} */
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
