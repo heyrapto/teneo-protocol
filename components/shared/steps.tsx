@@ -5,13 +5,14 @@ import { Icons } from "../ui/icons";
 
 export const Steps = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 border-t border-white/10">
+    <div className="flex flex-col lg:flex-row lg:overflow-x-auto lg:w-screen lg:ml-[calc(50%-50vw)] lg:pl-[calc(50vw-50%+4rem)] border-t border-white/10 no-scrollbar">
       {steps.map((step, index) => (
         <div
           key={step.title}
           className={`
-            relative group p-10 min-h-[340px] flex flex-col justify-between transition-all duration-300
-            border-b border-white/10 lg:border-b-0 bg-black
+            relative group p-10 flex flex-col justify-between transition-all duration-300 bg-black
+            w-full lg:min-w-[800px] min-h-[200px]
+            border-b border-white/10 lg:border-b-0
             ${index !== steps.length - 1 ? "lg:border-r lg:border-r-white/10" : ""}
             hover:bg-[#1F5CFF] hover:border-[#1F5CFF] hover:z-10 hover:!border-r-transparent
           `}
@@ -33,7 +34,7 @@ export const Steps = () => {
               </h3>
             </div>
 
-            <p className="text-sm text-gray-500 leading-relaxed group-hover:text-white transition-colors max-w-[260px]">
+            <p className="text-sm text-gray-500 leading-relaxed group-hover:text-white transition-colors max-w-full">
               {step.description}
             </p>
           </div>
@@ -55,6 +56,9 @@ export const Steps = () => {
           </div>
         </div>
       ))}
+
+      {/* Spacer for right scrolling padding */}
+      <div className="hidden lg:block min-w-[calc(50vw-50%+4rem)]"></div>
     </div>
   );
 };
