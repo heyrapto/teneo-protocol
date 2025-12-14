@@ -24,7 +24,7 @@ export const HeroSection = () => {
                             <motion.span
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                transition={{ duration: 0.1, delay: 2.4 }}
+                                transition={{ duration: 0.1, delay: 1 }}
                             >
                                 AI Starts With You.
                             </motion.span>
@@ -35,7 +35,7 @@ export const HeroSection = () => {
                                 animate={{ x: "100%" }}
                                 transition={{
                                     duration: 1.2,
-                                    delay: 2, // Starts after onboarding
+                                    delay: 0.8, // Starts after onboarding
                                     ease: [0.22, 1, 0.36, 1]
                                 }}
                                 className="absolute inset-0 bg-[#09090A] z-20"
