@@ -1,17 +1,16 @@
 import Link from "next/link";
 import { BsArrowRight, BsArrowUpRight } from "react-icons/bs";
 import { steps } from "@/constants";
-import { Icons } from "../ui/icons";
 
 export const Steps = () => {
   return (
-    <div className="flex flex-col lg:flex-row lg:overflow-x-auto lg:w-screen lg:ml-[calc(50%-50vw)] lg:pl-[calc(50vw-50%+4rem)] border-t border-white/10 no-scrollbar">
+    <div className="flex flex-col gap-4 lg:flex-row lg:overflow-x-auto lg:w-screen lg:ml-[calc(50%-50vw)] lg:pl-[calc(50vw-50%)] border-t border-white/10 no-scrollbar">
       {steps.map((step, index) => (
         <div
           key={step.title}
           className={`
             relative group p-10 flex flex-col justify-between transition-all duration-300 bg-black
-            w-full lg:min-w-[800px] min-h-[200px]
+            w-full lg:min-w-[800px] min-h-[180px]
             border-b border-white/10 lg:border-b-0
             ${index !== steps.length - 1 ? "lg:border-r lg:border-r-white/10" : ""}
             hover:bg-[#1F5CFF] hover:border-[#1F5CFF] hover:z-10 hover:!border-r-transparent
