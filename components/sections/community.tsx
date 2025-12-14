@@ -97,26 +97,14 @@ export const CommunitySection = () => {
                     </div>
 
                     {/* Right: Invite Card */}
-                    <div className="p-16 flex items-center justify-center bg-[#B4CCD1]">
-                        <div className="w-[300px] bg-black aspect-3/4 flex flex-col relative group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
-                            {/* Content */}
-                            <div className="grow flex items-center justify-center relative overflow-hidden">
-                                {/* Placeholder for crystal/holo effect */}
-                                <div className="w-32 h-32 bg-linear-to-tr from-blue-500 via-purple-500 to-pink-500 rotate-45 opacity-80 blur-xl absolute"></div>
-                                <div className="w-24 h-24 bg-linear-to-tr from-[#1F5CFF] to-[#D3F372] rotate-45 relative z-10 animate-pulse"></div>
-
-                                <div className="absolute top-4 left-4 flex gap-1">
-                                    {Array.from({ length: 8 }).map((_, i) => (
-                                        <div key={i} className="w-1 h-1 bg-[#D3F372] rounded-full"></div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Footer */}
-                            <div className="h-16 bg-[#D3F372] flex items-center justify-between px-6">
-                                <span className="font-bold text-black tracking-wider">INVITE</span>
-                                <BsArrowUpRight className="text-black text-xl" />
-                            </div>
+                    <div className="p-16 flex items-center justify-center">
+                        <div className="w-[250px] aspect-3/4 flex flex-col relative group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                            <Image
+                                src="/images/invite.avif"
+                                alt="Invite Card"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </div>
                 </div>
