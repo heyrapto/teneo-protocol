@@ -46,19 +46,19 @@ export const Icons = {
         </svg>
     ),
     Download: () => (
-        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 16L7 11H10V4H14V11H17L12 16ZM2 20V18H22V20H2Z" fill="currentColor" />
         </svg>
     ),
     Connect: () => (
-        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7 7H11V9H7C5.34 9 4 10.34 4 12C4 13.66 5.34 15 7 15H11V17H7C4.24 17 2 14.76 2 12C2 9.24 4.24 7 7 7Z" fill="currentColor" />
             <path d="M17 7H13V9H17C18.66 9 20 10.34 20 12C20 13.66 18.66 15 17 15H13V17H17C19.76 17 22 14.76 22 12C22 9.24 19.76 7 17 7Z" fill="currentColor" />
             <path d="M8 11H16V13H8V11Z" fill="currentColor" />
         </svg>
     ),
     Diamond: () => (
-        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
         </svg>
     ),

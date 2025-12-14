@@ -1,48 +1,58 @@
 import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsArrowUpRight } from "react-icons/bs";
 import { steps } from "@/constants";
+import { Icons } from "../ui/icons";
 
 export const Steps = () => {
   return (
-    <div className="grid grid-cols-3 gap-6 border-t border-[rgba(255,255,255,0.1)] overflow-x-auto w-screen">
+    <div className="grid grid-cols-1 lg:grid-cols-3 border-t border-white/10">
       {steps.map((step, index) => (
         <div
           key={step.title}
-          className={`bg-black w-[800px] p-8 flex flex-col justify-between min-h-[200px] relative group
-            ${index !== steps.length - 1 ? "border-r border-[rgba(255,255,255,0.1)]" : ""}
+          className={`
+            relative group p-10 min-h-[340px] flex flex-col justify-between transition-all duration-300
+            border-b border-white/10 lg:border-b-0 bg-black
+            ${index !== steps.length - 1 ? "lg:border-r lg:border-r-white/10" : ""}
+            hover:bg-[#1F5CFF] hover:border-[#1F5CFF] hover:z-10 hover:!border-r-transparent
           `}
         >
+          {/* Dots Decoration */}
+          <div className="absolute top-8 right-8 grid grid-cols-3 gap-1.5 opacity-0 group-hover:opacity-40 transition-opacity">
+            {[...Array(9)].map((_, i) => (
+              <div key={i} className="w-1 h-1 bg-white rounded-full"></div>
+            ))}
+          </div>
+
           <div>
-            <div className="flex gap-4 items-center">
-            <div className="w-8 h-8 text-white mb-6">{step.icon}</div>
-            <h3 className="text-xl font-normal text-white mb-4">
-              {step.title}
-            </h3>
+            <div className="flex gap-4 items-center mb-8">
+              <div className="text-white text-2xl">
+                {step.icon}
+              </div>
+              <h3 className="text-xl font-normal text-white uppercase tracking-wide">
+                {step.title}
+              </h3>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed w-full">
+
+            <p className="text-sm text-gray-500 leading-relaxed group-hover:text-white transition-colors max-w-[260px]">
               {step.description}
             </p>
           </div>
 
-          {step.showLink && (
-            <div className="mt-8">
+          <div className="mt-8">
+            {step.showLink ? (
               <Link
                 href={step.linkHref!}
-                className="flex items-center gap-2 text-white hover:text-[#D3F372] transition-colors group relative z-10"
+                className="flex items-center gap-3 text-white group-hover:text-white transition-colors w-fit"
               >
-                <span className="text-sm font-medium border-l-2 border-[#1F5CFF] pl-3">
+                <span className="text-sm font-medium border-l-[3px] border-[#1F5CFF] pl-4 py-0.5 group-hover:border-white transition-colors">
                   {step.linkText}
                 </span>
-                <BsArrowRight className="group-hover:translate-x-1 transition-transform" />
+                <BsArrowUpRight className="text-lg group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
-          )}
-
-          {step.hasCta && (
-            <button className="absolute bottom-8 right-8 w-12 h-12 bg-[#D3F372] rounded-full flex items-center justify-center text-black hover:scale-110 transition-transform cursor-pointer z-10">
-              <BsArrowRight className="text-xl" />
-            </button>
-          )}
+            ) : (
+              <div className="h-[26px]"></div>
+            )}
+          </div>
         </div>
       ))}
     </div>
