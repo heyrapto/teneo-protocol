@@ -7,7 +7,7 @@ export const FaqSection = () => {
     return (
         <section className="relative w-full bg-[#09090A] pt-32 pb-16 overflow-hidden">
             <Stripes variant="dark" />
-            <div className="container mx-auto px-8 lg:px-16 relative z-10">
+            <div className="w-full max-w-[1920px] mx-auto px-8 lg:px-16 relative z-10">
                 {/* Header */}
                 <div className="flex justify-between items-end mb-16 px-8 border-l border-[#222]">
                     <h2 className="text-[3.5rem] leading-none font-normal text-white">

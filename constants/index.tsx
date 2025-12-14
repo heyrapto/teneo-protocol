@@ -30,15 +30,15 @@ export const navItems = [
         dropdownItems: [
             {
                 icon: Icons.Message,
-                title: "Blog"
+                title: "Get Data Access"
             },
             {
                 icon: Icons.Agent,
-                title: "Teneo Academy"
+                title: "Agent SDK"
             },
             {
                 icon: Icons.SmallGroup,
-                title: "Teneo Docs"
+                title: "Partner with Us"
             },
         ]
     },
@@ -47,18 +47,25 @@ export const navItems = [
         dropdownItems: [
             {
                 icon: Icons.Handshake,
-                title: "Blog"
+                title: "Ambassador Program"
             },
             {
                 icon: Icons.LoveSymbol,
-                title: "Teneo Academy"
+                title: "Career"
             },
             {
                 icon: Icons.Media,
-                title: "Teneo Docs"
+                title: "Media Room"
             },
         ],
-        hasSocials: true
+        hasSocials: true,
+        socialIcons: [
+            { icon: Icons.X, title: "X" },
+            { icon: Icons.Discord, title: "Discord" },
+            { icon: Icons.YouTube, title: "YouTube" },
+            { icon: Icons.Linkedin, title: "Linkedin" },
+            { icon: Icons.Telegram, title: "Telegram" },
+        ]
     },
 ]
 

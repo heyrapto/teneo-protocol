@@ -8,7 +8,7 @@ export const CommunitySection = () => {
         <section className="relative w-full bg-[#B4CCD1] overflow-hidden">
             <Stripes variant="light" />
 
-            <div className="container mx-auto px-8 lg:px-16 pt-32 pb-32 relative z-10">
+            <div className="w-full max-w-[1920px] mx-auto px-8 lg:px-16 pt-32 pb-32 relative z-10">
                 {/* Header */}
                 <h2 className="text-[3.5rem] leading-none font-normal text-[#141414] text-center mb-24">
                     Teneo Protocol Community Node

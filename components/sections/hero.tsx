@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { Stripes } from "../layout/stripes";
 import { marqueeItems } from "@/constants";
+import { motion } from "framer-motion";
 
 export const HeroSection = () => {
     return (
@@ -8,11 +11,31 @@ export const HeroSection = () => {
             <Stripes variant="light" />
 
             {/* Hero Content */}
-            <div className="container mx-auto px-8 lg:px-16 pt-20 flex-grow flex flex-col justify-center">
-                <div className="grid grid-cols-12 gap-8 mb-16 relative z-10">
-                    <div className="col-span-12 lg:col-span-6">
-                        <h1 className="text-[5.5rem] leading-[0.9] -tracking-[0.04em] font-normal text-[#141414] mb-12">
-                            AI Starts With You.
+            <div className="w-full max-w-[1920px] mx-auto px-8 lg:px-16 pt-20 pb-32">
+                {/* Hero Text */}
+                <div className="grid grid-cols-12 gap-8 mb-16">
+                    <div className="col-span-12 lg:col-span-6 relative z-10">
+                        <h1 className="text-[5.5rem] leading-[0.9] -tracking-[0.04em] font-normal text-[#141414] mb-12 relative w-fit overflow-hidden">
+                            {/* Text */}
+                            <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.1, delay: 2.4 }}
+                            >
+                                AI Starts With You.
+                            </motion.span>
+
+                            {/* Black Background Reveal */}
+                            <motion.div
+                                initial={{ x: "-100%" }}
+                                animate={{ x: "100%" }}
+                                transition={{
+                                    duration: 1.2,
+                                    delay: 2, // Starts after onboarding
+                                    ease: [0.22, 1, 0.36, 1]
+                                }}
+                                className="absolute inset-0 bg-[#09090A] z-20"
+                            />
                         </h1>
                         <p className="text-xl font-normal leading-[1.4] text-[#141414] opacity-80 max-w-[500px] mb-12">
                             Be Part of a Decentralized and Permissionless Agent Network fueling AI with Real-Time Data
@@ -24,6 +47,7 @@ export const HeroSection = () => {
                         </div>
                     </div>
 
+                    {/* 3D Elements - Placeholder/Image */}
                     <div className="col-span-12 lg:col-span-6 relative h-[400px]">
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                             <Image

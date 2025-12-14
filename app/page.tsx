@@ -10,9 +10,12 @@ import { PrivacySection } from "@/components/sections/privacy";
 import { VisionSection } from "@/components/sections/vision";
 import ReactLenis from "lenis/react";
 
+import { Onboarding } from "@/components/layout/onboarding";
+
 export default function Home() {
   return (
-    <ReactLenis root className="relative min-h-screen flex flex-col isolate">
+    <ReactLenis root>
+      <Onboarding />
       <Navbar />
       <HeroSection />
       <VisionSection />
