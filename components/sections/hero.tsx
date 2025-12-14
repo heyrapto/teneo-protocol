@@ -11,7 +11,7 @@ export const HeroSection = () => {
             <Stripes variant="light" />
 
             {/* Hero Content */}
-            <div className="w-full max-w-[1920px] mx-auto px-8 lg:px-16 pt-20 pb-32">
+            <div className="container mx-auto px-8 lg:px-16 pt-20 pb-32">
                 {/* Hero Text */}
                 <div className="grid grid-cols-12 gap-8 mb-16">
                     <div className="col-span-12 lg:col-span-6 relative z-10">

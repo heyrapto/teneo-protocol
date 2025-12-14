@@ -16,15 +16,15 @@ export const Onboarding = () => {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed inset-0 z-[100] grid grid-cols-7 h-screen w-full pointer-events-none">
-            {[...Array(7)].map((_, i) => (
+        <div className="fixed inset-0 z-[100] grid grid-cols-6 h-screen w-full pointer-events-none">
+            {[...Array(6)].map((_, i) => (
                 <motion.div
                     key={i}
                     initial={{ scaleY: 1 }}
                     animate={{ scaleY: 0 }}
                     transition={{
                         duration: 1.2,
-                        delay: (6 - i) * 0.1, // Right to Left stagger (Cluster/Base on Left)
+                        delay: (5 - i) * 0.1, // Right to Left stagger (Cluster/Base on Left)
                         ease: [0.22, 1, 0.36, 1],
                     }}
                     className="w-full h-full bg-[#B4CCD1]"

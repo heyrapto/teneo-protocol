@@ -24,7 +24,7 @@ export const Footer = () => {
                 ))}
             </div>
 
-            <div className="w-full max-w-[1920px] mx-auto px-8 lg:px-16 relative z-10 flex flex-col min-h-[400px] justify-between">
+            <div className="container mx-auto px-8 lg:px-16 relative z-10 flex flex-col min-h-[400px] justify-between">
                 {/* Top Section */}
                 <div className="grid grid-cols-12 gap-8 mb-24">
                     <div className="col-span-12 lg:col-span-6">

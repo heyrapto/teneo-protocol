@@ -13,7 +13,7 @@ export const PartnersSection = () => {
                 ))}
             </div>
 
-            <div className="w-full max-w-[1920px] mx-auto px-8 lg:px-16 flex items-center relative z-10 h-full min-h-[400px]">
+            <div className="container mx-auto px-8 lg:px-16 flex items-center relative z-10 h-full min-h-[400px]">
                 <div className="grid grid-cols-12 w-full gap-8">
                     {/* Title */}
                     <div className="col-span-12 lg:col-span-3">

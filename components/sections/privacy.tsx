@@ -4,7 +4,7 @@ export const PrivacySection = () => {
     return (
         <section className="relative w-full bg-[#1F5CFF] py-32 overflow-hidden">
             <Stripes variant="light" />
-            <div className="w-full max-w-[1920px] mx-auto px-8 lg:px-16 flex items-center justify-between text-center">
+            <div className="container mx-auto px-8 lg:px-16 flex items-center justify-between text-center">
 
                 {/* Grid Lock Icon */}
                 <div className="mb-12 relative w-24 h-24 grid grid-cols-5 gap-2">
