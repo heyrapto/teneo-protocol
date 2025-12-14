@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaDiscord, FaLinkedinIn, FaTelegramPlane, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaLinkedinIn, FaTelegramPlane, FaYoutube } from "react-icons/fa";
 import { BsX } from "react-icons/bs"; // Using BsX for 'X' logo if preferred, or custom SVG
 import { Stripes } from "../layout/stripes";
 
@@ -32,7 +32,7 @@ export const Footer = () => {
                             Creating the Future with Decentralized Data
                         </h2>
                         <div className="flex items-center gap-2 mb-8">
-                            <Image src="./images/logo.svg" alt="Teneo" width={120} height={40} className="invert brightness-0 invert" />
+                            <Image src="./images/logo.svg" alt="Teneo" width={120} height={40} className="brightness-0 invert" />
                         </div>
                     </div>
                 </div>

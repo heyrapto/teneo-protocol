@@ -2,9 +2,9 @@ import { Stripes } from "../layout/stripes";
 
 export const PrivacySection = () => {
     return (
-        <section className="relative w-full bg-[#1F5CFF] py-32 overflow-hidden">
+        <section className="relative w-full bg-[#0c4cf5] py-32 overflow-hidden">
             <Stripes variant="light" />
-            <div className="container mx-auto px-8 lg:px-16 flex items-center justify-between text-center">
+            <div className="container mx-auto px-8 lg:px-16 flex items-center gap-20 justify-center text-center">
 
                 {/* Grid Lock Icon */}
                 <div className="mb-12 relative w-24 h-24 grid grid-cols-5 gap-2">
@@ -33,11 +33,11 @@ export const PrivacySection = () => {
                 </div>
 
                 <div className="flex flex-col items-start text-start">
-                    <h2 className="text-[3.5rem] leading-tight font-normal text-white mb-6">
+                    <h2 className="text-[3rem] leading-tight font-normal text-white mb-6">
                         Your privacy is our top priority
                     </h2>
 
-                    <p className="text-white/80 max-w-[800px] text-lg leading-relaxed">
+                    <p className="text-white/80 max-w-[600px] text-sm leading-relaxed">
                         The Teneo Protocol AI Agent only connects public data streams, never private messages or personal activities. What your agent processes stays on your device unless you choose to share it and contribute to a decentralized future. With Teneo Protocol, you&apos;re in control. Always.
                     </p>
                 </div>

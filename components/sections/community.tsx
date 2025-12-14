@@ -1,7 +1,7 @@
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { Stripes } from "../layout/stripes";
-import { BsArrowUpRight, BsCopy } from "react-icons/bs";
+import { BsArrowUpRight } from "react-icons/bs";
 
 export const CommunitySection = () => {
     return (
@@ -15,9 +15,9 @@ export const CommunitySection = () => {
                 </h2>
 
                 {/* Two Column Cards */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#B4CCD1] border border-[#141414]/10 mb-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 border border-gray-400 mb-0">
                     {/* Left: AI Agent */}
-                    <div className="border-r border-[#141414]/10 p-12 flex flex-col h-full">
+                    <div className="border-r border-gray-400 p-12 flex flex-col h-full bg-[#B4CCD1]">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-6 h-6 rounded-full border border-black flex items-center justify-center">
                                 <div className="w-2 h-2 bg-black rounded-sm"></div>
@@ -32,7 +32,7 @@ export const CommunitySection = () => {
                                 Install Now <span className="ml-2">↓</span>
                             </Button>
                         </div>
-                        <div className="mt-auto relative w-full aspect-[16/10] rounded-lg overflow-hidden shadow-2xl">
+                        <div className="mt-auto relative w-full aspect-16/10 rounded-lg overflow-hidden shadow-2xl">
                             <Image
                                 src="/images/community/1.png"
                                 alt="AI Agent Interface"
@@ -43,7 +43,7 @@ export const CommunitySection = () => {
                     </div>
 
                     {/* Right: Dashboard */}
-                    <div className="p-12 flex flex-col h-full">
+                    <div className="p-12 flex flex-col h-full bg-[#B4CCD1]">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-6 h-6 rounded-full border border-[#1F5CFF] flex items-center justify-center">
                                 <div className="w-2 h-2 bg-[#1F5CFF] rounded-full"></div>
@@ -58,7 +58,7 @@ export const CommunitySection = () => {
                                 Open Dashboard
                             </Button>
                         </div>
-                        <div className="mt-auto relative w-full aspect-[16/10] rounded-lg overflow-hidden shadow-2xl">
+                        <div className="mt-auto relative w-full aspect-16/10 rounded-lg overflow-hidden shadow-2xl">
                             <Image
                                 src="/images/community/2.png"
                                 alt="Dashboard Interface"
@@ -70,7 +70,7 @@ export const CommunitySection = () => {
                 </div>
 
                 {/* Invite Section */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 border-x border-b border-[#141414]/10 bg-[#B4CCD1]">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
                     {/* Left: Content */}
                     <div className="p-16 border-r border-[#141414]/10 flex flex-col justify-center">
                         <h3 className="text-[2.5rem] leading-tight font-normal text-[#141414] mb-8">
@@ -89,7 +89,7 @@ export const CommunitySection = () => {
                                 "Simply track your referrals in the Dashboard."
                             ].map((item, i) => (
                                 <li key={i} className="flex items-start gap-3 text-[#141414]/80 text-sm">
-                                    <span className="mt-1.5 w-1 h-1 bg-black rounded-full block flex-shrink-0"></span>
+                                    <span className="mt-1.5 w-1 h-1 bg-black rounded-full block shrink-0"></span>
                                     {item}
                                 </li>
                             ))}
@@ -98,12 +98,12 @@ export const CommunitySection = () => {
 
                     {/* Right: Invite Card */}
                     <div className="p-16 flex items-center justify-center bg-[#B4CCD1]">
-                        <div className="w-[300px] bg-black aspect-[3/4] flex flex-col relative group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                        <div className="w-[300px] bg-black aspect-3/4 flex flex-col relative group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
                             {/* Content */}
-                            <div className="flex-grow flex items-center justify-center relative overflow-hidden">
+                            <div className="grow flex items-center justify-center relative overflow-hidden">
                                 {/* Placeholder for crystal/holo effect */}
-                                <div className="w-32 h-32 bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500 rotate-45 opacity-80 blur-xl absolute"></div>
-                                <div className="w-24 h-24 bg-gradient-to-tr from-[#1F5CFF] to-[#D3F372] rotate-45 relative z-10 animate-pulse"></div>
+                                <div className="w-32 h-32 bg-linear-to-tr from-blue-500 via-purple-500 to-pink-500 rotate-45 opacity-80 blur-xl absolute"></div>
+                                <div className="w-24 h-24 bg-linear-to-tr from-[#1F5CFF] to-[#D3F372] rotate-45 relative z-10 animate-pulse"></div>
 
                                 <div className="absolute top-4 left-4 flex gap-1">
                                     {Array.from({ length: 8 }).map((_, i) => (

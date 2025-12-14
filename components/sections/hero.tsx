@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export const HeroSection = () => {
     return (
-        <section className="relative min-h-screen w-full bg-[var(--brand--teal-1)] pt-[88px] overflow-hidden flex flex-col justify-between">
+        <section className="relative min-h-screen w-full bg-(--brand--teal-1) pt-[88px] pb-20 overflow-hidden flex flex-col justify-between">
             <Stripes variant="light" />
 
             {/* Hero Content */}
@@ -64,11 +64,11 @@ export const HeroSection = () => {
 
             {/* Infinite Marquee */}
             <div className="w-full relative z-10 overflow-hidden">
-                <div className="flex -space-x-20 animate-marquee">
+                <div className="flex gap-10 animate-marquee">
                     {[...marqueeItems, ...marqueeItems].map((item, index) => (
                         <div
                             key={index}
-                            className="relative w-[950px] h-[700px] flex-shrink-0 group"
+                            className="relative w-[600px] h-[600px] shrink-0 group"
                         >
                             {/* Image */}
                             <Image
@@ -80,7 +80,7 @@ export const HeroSection = () => {
 
                             {/* Video overlay only for rewards */}
                             {item.type === "video" && (
-                                <div className="absolute right-0 bottom-20 w-[200px] h-[200px] group-hover:scale-110 transition-transform duration-500">
+                                <div className="absolute right-0 bottom-52 w-[200px] h-[200px] transition-transform duration-500">
                                     <video
                                         autoPlay
                                         loop

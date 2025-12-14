@@ -25,7 +25,7 @@ export const FaqSection = () => {
                         <div key={i} className="border-b border-[#222] group">
                             <details className="group [&_summary::-webkit-details-marker]:hidden">
                                 <summary className="flex items-center justify-between p-8 cursor-pointer select-none">
-                                    <h3 className="text-lg text-white font-normal group-hover:text-[#1F5CFF] transition-colors">
+                                    <h3 className="text-lg text-white font-normal transition-colors">
                                         {faq.question}
                                     </h3>
                                     <span className="text-white/50 group-open:rotate-180 transition-transform duration-300">

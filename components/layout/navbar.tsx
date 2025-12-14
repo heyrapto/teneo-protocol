@@ -17,23 +17,23 @@ export const Navbar = () => {
                 <ul className="flex items-center gap-12 h-full">
                     {navItems.map((n, i) => (
                         <li key={i} className="inline-flex items-center gap-2 group cursor-pointer h-full relative">
-                            <span className="text-lg font-medium relative text-[#141414] opacity-80 group-hover:opacity-100 transition-opacity">
+                            <span className={`text-lg font-medium relative opacity-80 group-hover:opacity-100 transition-opacity cursor-pointer ${n.dropdownItems ? "group-hover:text-blue-500" : "text-[#141414]"}`}>
                                 {n.title}
                             </span>
                             {n.dropdownItems && (
-                                <BiChevronDown className="text-xl text-[#141414] opacity-80 group-hover:rotate-180 transition-transform" />
+                                <BiChevronDown className={`text-xl text-[#141414] opacity-80 group-hover:rotate-180 transition-transform ${n.dropdownItems ? "group-hover:text-blue-500" : "text-[#141414]"}`} />
                             )}
 
                             {/* Dropdown Menu */}
                             {n.dropdownItems && (
-                                <div className="absolute top-full left-0 pt-4 w-max invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-50">
-                                    <div className="bg-[#B4CCD1]/90 backdrop-blur-md border border-white/20 shadow-xl p-4 min-w-[280px]">
+                                <div className="absolute top-full left-0 pt-6 w-max invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 z-50">
+                                    <div className="bg-[#B4CCD1] backdrop-blur-md border border-white/20 p-0 min-w-fit">
                                         <div className={`grid ${n.hasSocials ? 'grid-cols-2 divide-x divide-black/10' : 'grid-cols-1'}`}>
                                             {/* Main Items */}
-                                            <div className="flex flex-col gap-2 p-2">
+                                            <div className="flex flex-col p-2">
                                                 {n.dropdownItems.map((item, idx) => (
-                                                    <div key={idx} className="flex items-center gap-4 p-3 hover:bg-black/5 rounded-md transition-colors cursor-pointer group/item">
-                                                        <div className="w-8 h-8 text-[#141414] group-hover/item:text-[#1F5CFF] transition-colors">
+                                                    <div key={idx} className="flex items-center gap-4 p-3 hover:bg-[#1F5CFF] group-hover:text-white rounded-md transition-colors cursor-pointer group/item">
+                                                        <div className="w-8 h-8 text-[#141414] transition-colors hover:bg-[#1F5CFF] hover:text-white">
                                                             {item.icon && <item.icon />}
                                                         </div>
                                                         <span className="text-[#141414] font-medium text-sm whitespace-nowrap">{item.title}</span>
@@ -43,9 +43,9 @@ export const Navbar = () => {
 
                                             {/* Socials Column (if present) */}
                                             {n.hasSocials && n.socialIcons && (
-                                                <div className="flex flex-col gap-2 p-2 pl-4">
+                                                <div className="flex flex-col p-2 pl-4">
                                                     {n.socialIcons.map((social, idx) => (
-                                                        <div key={idx} className="flex items-center gap-4 p-3 hover:bg-black/5 rounded-md transition-colors cursor-pointer group/item">
+                                                        <div key={idx} className="flex items-center gap-4 p-1 rounded-md transition-colors cursor-pointer group/item">
                                                             <div className="w-6 h-6 text-[#141414] group-hover/item:text-[#1F5CFF] transition-colors">
                                                                 {social.icon && <social.icon />}
                                                             </div>

@@ -4,20 +4,22 @@ import { steps } from "@/constants";
 
 export const Steps = () => {
   return (
-    <div className="grid grid-cols-12 border-t border-[rgba(255,255,255,0.1)]">
+    <div className="grid grid-cols-3 gap-6 border-t border-[rgba(255,255,255,0.1)] overflow-x-auto w-screen">
       {steps.map((step, index) => (
         <div
           key={step.title}
-          className={`col-span-12 md:col-span-4 p-8 flex flex-col justify-between min-h-[300px] relative group
+          className={`bg-black w-[800px] p-8 flex flex-col justify-between min-h-[200px] relative group
             ${index !== steps.length - 1 ? "border-r border-[rgba(255,255,255,0.1)]" : ""}
           `}
         >
           <div>
+            <div className="flex gap-4 items-center">
             <div className="w-8 h-8 text-white mb-6">{step.icon}</div>
             <h3 className="text-xl font-normal text-white mb-4">
               {step.title}
             </h3>
-            <p className="text-sm text-gray-400 leading-relaxed max-w-[250px]">
+            </div>
+            <p className="text-sm text-gray-400 leading-relaxed w-full">
               {step.description}
             </p>
           </div>
