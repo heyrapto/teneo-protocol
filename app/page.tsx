@@ -13,7 +13,6 @@ import ReactLenis from "lenis/react";
 export default function Home() {
   return (
     <ReactLenis root className="relative min-h-screen flex flex-col isolate">
-      <Stripes />
       <Navbar />
       <HeroSection />
       <VisionSection />

@@ -1,14 +1,27 @@
-export const Stripes = () => {
+interface StripesProps {
+    variant?: "light" | "dark";
+}
+
+export const Stripes = ({ variant = "light" }: StripesProps) => {
+    const borderColor = variant === "light"
+        ? "border-gray-400"
+        : "border-[var(--neutral--3)]";
+
+    const bgColor = variant === "light"
+        ? "bg-transparent"
+        : "bg-transparent";
+
     return (
-        <div className="absolute inset-0 -z-10 grid h-full w-full grid-cols-8">
-            {Array.from({ length: 8 }).map((_, i) => (
+        <div className="absolute inset-x-0 top-0 h-full w-full pointer-events-none grid grid-cols-7 mx-auto max-w-[1920px]">
+            {Array.from({ length: 7 }).map((_, i) => (
                 <div
                     key={i}
                     className={[
                         "h-full w-full overflow-hidden",
-                        "border-r-[0.5px] border-l-[0.5px] border-(--brand--teal-border)",
-                        "bg-(--brand--teal-1)",
-                        i === 0 && "border-l-(--neutral--tranparent)",
+                        "border-r-[0.5px] border-l-[0.5px]",
+                        borderColor,
+                        bgColor,
+                        i === 0 && (variant === "light" ? "border-l-gray-500" : "border-l-transparent"),
                     ]
                         .filter(Boolean)
                         .join(" ")}

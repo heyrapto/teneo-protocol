@@ -1,7 +1,77 @@
+import Image from "next/image";
+import { Stripes } from "../layout/stripes";
+import { marqueeItems } from "@/constants";
+
 export const HeroSection = () => {
     return (
-        <section className="bg-[#9eb5bc] min-h-screen">
-            
+        <section className="relative min-h-screen w-full bg-[var(--brand--teal-1)] pt-[88px] overflow-hidden flex flex-col justify-between">
+            <Stripes variant="light" />
+
+            {/* Hero Content */}
+            <div className="container mx-auto px-8 lg:px-16 pt-20 flex-grow flex flex-col justify-center">
+                <div className="grid grid-cols-12 gap-8 mb-16 relative z-10">
+                    <div className="col-span-12 lg:col-span-6">
+                        <h1 className="text-[5.5rem] leading-[0.9] -tracking-[0.04em] font-normal text-[#141414] mb-12">
+                            AI Starts With You.
+                        </h1>
+                        <p className="text-xl font-normal leading-[1.4] text-[#141414] opacity-80 max-w-[500px] mb-12">
+                            Be Part of a Decentralized and Permissionless Agent Network fueling AI with Real-Time Data
+                        </p>
+                        <div className="flex items-center gap-2 group cursor-pointer w-fit">
+                            <span className="text-black text-lg font-medium border-l-[3px] border-[#1F5CFF] pl-4 h-6 flex items-center">
+                                Join now and get your share
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="col-span-12 lg:col-span-6 relative h-[400px]">
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <Image
+                                src="/images/hero_image.svg"
+                                alt="Teneo 3D Elements"
+                                width={300}
+                                height={300}
+                                priority
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Infinite Marquee */}
+            <div className="w-full relative z-10 overflow-hidden">
+                <div className="flex -space-x-20 animate-marquee">
+                    {[...marqueeItems, ...marqueeItems].map((item, index) => (
+                        <div
+                            key={index}
+                            className="relative w-[950px] h-[700px] flex-shrink-0 group"
+                        >
+                            {/* Image */}
+                            <Image
+                                src={item.src}
+                                alt={item.alt}
+                                fill
+                                className="object-contain object-top"
+                            />
+
+                            {/* Video overlay only for rewards */}
+                            {item.type === "video" && (
+                                <div className="absolute right-0 bottom-20 w-[200px] h-[200px] group-hover:scale-110 transition-transform duration-500">
+                                    <video
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="w-full h-full object-cover mix-blend-screen"
+                                    >
+                                        <source src="/videos/rewards-video.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
         </section>
-    )
-}
+    );
+};
