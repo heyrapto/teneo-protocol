@@ -8,7 +8,6 @@ export const Footer = () => {
     return (
         <footer className="relative w-full bg-[#09090A] pt-32 pb-12 overflow-hidden border-t border-[#222]">
             <Stripes variant="dark" />
-            {/* Background Image / Elements */}
             <div className="absolute right-0 top-0 h-full w-[600px] pointer-events-none opacity-50">
                 <Image
                     src="/images/footer-img.png"
