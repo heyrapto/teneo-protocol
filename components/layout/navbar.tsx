@@ -23,7 +23,7 @@ export const Navbar = () => {
                     delay: 1,
                     ease: [0.22, 1, 0.36, 1],
                 }}
-                className="absolute top-0 flex justify-between items-stretch w-full h-[88px] z-50 border-b border-b-gray-400 bg-[#B4CCD1] lg:bg-transparent"
+                className="absolute top-0 flex justify-between items-stretch w-full h-[70px] z-50 border-b border-b-gray-400 bg-[#B4CCD1] lg:bg-transparent"
             >
                 <div className="flex items-center gap-16 pl-6 lg:pl-20 h-full">
                     <Image
@@ -70,7 +70,7 @@ export const Navbar = () => {
                                                     {n.dropdownItems.map((item, idx) => (
                                                         <div
                                                             key={idx}
-                                                            className="group/item flex items-center gap-4 p-3 rounded-md cursor-pointer transition-colors hover:bg-[#1F5CFF]"
+                                                            className="group/item flex items-center gap-4 p-3 cursor-pointer transition-colors hover:bg-[#1F5CFF]"
                                                         >
                                                             <div className="w-8 h-8 flex items-center justify-center text-[#141414] transition-colors group-hover/item:text-white">
                                                                 {item.icon && <item.icon />}

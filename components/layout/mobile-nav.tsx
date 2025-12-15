@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import { navItems } from "@/constants";
 import { BiChevronDown } from "react-icons/bi";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 import { FaDiscord, FaYoutube, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
@@ -19,6 +19,21 @@ interface MobileNavProps {
 export const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
     const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
+    // Lock body scroll when menu is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+            document.documentElement.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+            document.documentElement.style.overflow = "unset";
+        };
+    }, [isOpen]);
+
     const toggleAccordion = (title: string) => {
         setOpenAccordion(openAccordion === title ? null : title);
     };
@@ -30,7 +45,7 @@ export const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    className="fixed inset-0 z-[40] bg-[#09090A] h-fit flex flex-col pt-[88px] overflow-y-auto"
+                    className="fixed inset-0 z-[40] bg-[#09090A] h-fit flex flex-col pt-[80px] overflow-y-auto"
                 >
                     {/* Menu Content */}
                     <div className="flex flex-col p-8 w-full">
@@ -56,8 +71,8 @@ export const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
                                                 className="overflow-hidden"
                                             >
                                                 <div className="flex flex-col gap-2 pt-6">
-                                                    {/* Dropdown Items (e.g. Learn > Blog) */}
-                                                    {item.dropdownItems && item.dropdownItems.map((subItem, idx) => (
+                                                    {/* Standard Dropdown Items (Non-Join) */}
+                                                    {item.title !== "Join" && item.dropdownItems && item.dropdownItems.map((subItem, idx) => (
                                                         <Link key={idx} href="#" className="flex items-center gap-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
                                                             <div className="w-10 h-10 bg-white/5 rounded flex items-center justify-center text-white group-hover:bg-[#1F5CFF] transition-colors shrink-0">
                                                                 {subItem.icon && <subItem.icon />}
@@ -66,12 +81,23 @@ export const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
                                                         </Link>
                                                     ))}
 
-                                                    {/* Join Section Extras (Ambassador, Career, etc) - manually mapped for Join */}
+                                                    {/* Special "Join" Two-Column Layout */}
                                                     {item.title === "Join" && (
-                                                        <>
+                                                        <div className="grid grid-cols-2 gap-4">
+                                                            {/* Left Column: Join Items */}
+                                                            <div className="flex flex-col gap-2">
+                                                                {item.dropdownItems && item.dropdownItems.map((subItem, idx) => (
+                                                                    <Link key={idx} href="#" className="flex items-center gap-4 group p-2 rounded-lg hover:bg-white/5 transition-colors">
+                                                                        <div className="w-10 h-10 bg-white/5 rounded flex items-center justify-center text-white group-hover:bg-[#1F5CFF] transition-colors shrink-0">
+                                                                            {subItem.icon && <subItem.icon />}
+                                                                        </div>
+                                                                        <span className="text-white text-sm lg:text-base leading-tight">{subItem.title}</span>
+                                                                    </Link>
+                                                                ))}
+                                                            </div>
 
-                                                            {/* Socials Grid */}
-                                                            <div className="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-white/10">
+                                                            {/* Right Column: Socials */}
+                                                            <div className="flex flex-col gap-2 border-l border-white/10 pl-4">
                                                                 {[
                                                                     { title: "X", icon: BsTwitter },
                                                                     { title: "Discord", icon: FaDiscord },
@@ -79,13 +105,13 @@ export const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
                                                                     { title: "Linkedin", icon: FaLinkedinIn },
                                                                     { title: "Telegram", icon: FaTelegramPlane }
                                                                 ].map((social, i) => (
-                                                                    <Link key={social.title} href="#" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
+                                                                    <Link key={social.title} href="#" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors py-2">
                                                                         {social.icon && <social.icon className="text-lg" />}
                                                                         <span className="text-base">{social.title}</span>
                                                                     </Link>
                                                                 ))}
                                                             </div>
-                                                        </>
+                                                        </div>
                                                     )}
                                                 </div>
                                             </motion.div>
