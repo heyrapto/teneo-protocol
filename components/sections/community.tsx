@@ -1,7 +1,6 @@
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { Stripes } from "../layout/stripes";
-import { BsArrowUpRight } from "react-icons/bs";
 
 export const CommunitySection = () => {
     return (
@@ -28,8 +27,8 @@ export const CommunitySection = () => {
                             The Teneo Protocol Community Node is an AI agent that anyone can run directly in their browser. The agent collects and structures real-time data from across the web. Operating in a fully permissionless system, the agent responds directly to your defined tasks, not centralized control.
                         </p>
                         <div className="mb-12">
-                            <Button variant="secondary" className="w-fit px-8 py-3 text-sm">
-                                Install Now <span className="ml-2">↓</span>
+                            <Button variant="secondary" icon="chevronDown">
+                                Install Now
                             </Button>
                         </div>
                         <div className="mt-auto relative w-full aspect-16/10 rounded-lg overflow-hidden shadow-2xl">
@@ -54,7 +53,7 @@ export const CommunitySection = () => {
                             The Teneo Protocol Dashboard is your all-in-one platform to manage activities, track rewards, and access essential tools within the Teneo Protocol ecosystem. Designed with an intuitive interface and user-friendly features, the dashboard helps users track progress, maximize rewards, and stay connected with the community.
                         </p>
                         <div className="mb-12">
-                            <Button variant="secondary" icon="chevronUpRight" className="w-fit px-8 py-3 text-sm">
+                            <Button variant="secondary" icon="chevronUpRight">
                                 Open Dashboard
                             </Button>
                         </div>

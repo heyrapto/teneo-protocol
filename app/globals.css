@@ -75,17 +75,12 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee 20s linear infinite;
+  animation: marquee 50s linear infinite;
 }
 
 .animate-marquee-reverse {
   animation: marquee-reverse 20s linear infinite;
 }
-
-/* .animate-marquee:hover,
-.animate-marquee-reverse:hover {
-  animation-play-state: paused;
-} */
 
 @keyframes marquee-reverse {
   0% {
@@ -95,4 +90,15 @@ body {
   100% {
     transform: translateX(0);
   }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
