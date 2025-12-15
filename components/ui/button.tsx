@@ -20,10 +20,10 @@ export const Button: React.FC<ButtonProps> = ({ variant, icon, className, childr
         }
     };
 
-    const baseClasses = `flex items-center justify-center gap-2 px-4 py-2 rounded-none transition-colors font-medium`;
-    const variantClasses = variant === "primary" ? "bg-black text-white hover:bg-neutral-800" :
-            variant === "secondary" ? "bg-[#0c4cf5] text-white hover:bg-gray-300" :
-            variant === "tetiary" ? "bg-transparent text-black border border-gray-200 hover:bg-gray-50" : "";
+    const baseClasses = `flex items-center justify-center gap-2 rounded-none transition-colors font-medium cursor-pointer`;
+    const variantClasses = variant === "primary" ? "bg-black text-white hover:bg-neutral-800 h-full py-6 px-8" :
+        variant === "secondary" ? "bg-[#0c4cf5] text-white hover:bg-gray-300 h-full py-6 px-8" :
+            variant === "tetiary" ? "bg-transparent text-white py-0 px-0 text-xs" : "";
 
     return (
         <button className={`${baseClasses} ${variantClasses} ${className || ""}`} {...props}>

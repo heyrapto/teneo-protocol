@@ -7,7 +7,7 @@ export const VisionSection = () => {
         <section className="relative w-full bg-[#09090A] overflow-hidden">
             <Stripes variant="dark" />
 
-            <div className="container mx-auto px-8 lg:px-16 pt-32 pb-0 relative z-10">
+            <div className="container mx-auto px-8 lg:px-16 py-32 relative z-10">
                 {/* Top Content */}
                 <div className="grid grid-cols-12 gap-8 mb-32 items-center">
                     {/* Left Text */}

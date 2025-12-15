@@ -30,7 +30,7 @@ export const Footer = () => {
 
                     {/* Cubes Graphics (CSS approximation) */}
                     <div className="col-span-6 lg:col-span-3 relative h-[400px] flex items-center justify-center">
-                        <div className="relative w-[600px] h-[500px] ">
+                        <div className="relative w-[600px] h-[500px]">
                             <Image
                                 src="/images/footer-img.png"
                                 alt="Footer Background"

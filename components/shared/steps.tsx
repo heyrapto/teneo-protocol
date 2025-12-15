@@ -105,7 +105,7 @@ export const Steps = () => {
           {canScrollLeft && (
             <button
               onClick={() => scroll("left")}
-              className="w-12 h-12 rounded-full bg-[#D3F372] flex items-center justify-center text-black hover:scale-110 transition-transform shadow-lg"
+              className="w-12 h-12 rounded-full bg-[#D3F372] flex items-center justify-center text-black hover:scale-110 transition-transform shadow-lg cursor-pointor"
             >
               <BsChevronLeft className="text-xl" />
             </button>
@@ -115,7 +115,7 @@ export const Steps = () => {
           {canScrollRight && (
             <button
               onClick={() => scroll("right")}
-              className="w-12 h-12 rounded-full bg-[#D3F372] flex items-center justify-center text-black hover:scale-110 transition-transform shadow-lg"
+              className="w-12 h-12 rounded-full bg-[#D3F372] flex items-center justify-center text-black hover:scale-110 transition-transform shadow-lg cursor-pointor"
             >
               <BsChevronRight className="text-xl" />
             </button>

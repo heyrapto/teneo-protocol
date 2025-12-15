@@ -32,7 +32,7 @@ export const FaqSection = () => {
                                         <BsChevronDown />
                                     </span>
                                 </summary>
-                                <div className="px-8 pb-8">
+                                <div className="px-8 pb-8 transition-all duration-300">
                                     <p className="text-gray-400 text-sm leading-relaxed max-w-[800px]">
                                         {faq.answer}
                                     </p>
