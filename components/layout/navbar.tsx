@@ -23,9 +23,9 @@ export const Navbar = () => {
                     delay: 1,
                     ease: [0.22, 1, 0.36, 1],
                 }}
-                className="absolute top-0 flex justify-between items-center w-full h-fit z-50 border-b border-b-gray-400 bg-[#B4CCD1] lg:bg-transparent"
+                className="absolute top-0 flex justify-between items-stretch w-full h-[88px] z-50 border-b border-b-gray-400 bg-[#B4CCD1] lg:bg-transparent"
             >
-                <div className="flex items-center gap-16 pl-6 lg:pl-20 py-4 lg:py-0">
+                <div className="flex items-center gap-16 pl-6 lg:pl-20 h-full">
                     <Image
                         src="./images/logo.svg"
                         alt="Logo"
